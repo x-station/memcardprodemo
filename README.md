@@ -24,3 +24,10 @@ It then sends some MemcardPro commands that change the active memory card on it.
 
 		Docker will do a one-time download of the build image (see intro) and then do the thing.
 		
+
+    References:
+
+        Here's the official spec for game ID transmission.
+        It applies to both PS1Digital and MCPro.
+
+        https://gitlab.com/chriz2600/ps1-game-id-transmission
