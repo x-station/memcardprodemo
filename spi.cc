@@ -410,7 +410,10 @@ ulong SPI::Read( ulong which, uchar *outBytes, char requestByte, char requestSta
         // We've already got 2
         while( bytesRead < bytesToRead ) {
 
-            auto b = Swap( requestByte, 0x00 );
+            // a bug used to Swap "requestByte" here, which is supposed to be "requestState", sorry about that
+            // the effect would be that a pad in rumble unlocked mode might rumble by itself
+            // no other problems are expected
+            auto b = Swap( requestState, 0x00 );
             if( !b.has_value() )
                 return std::nullopt;
 
